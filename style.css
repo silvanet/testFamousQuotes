@@ -1,104 +1,81 @@
-html {
-	background: url(images/mymountainpic.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
+<!DOCTYPE html>
+<html>
 
-body {
-	background-color: transparent;
-}
+<head>
+	<title>Mashape Andrux Famous Quotes API</title>
+	<meta charset="utf-8">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400i|Special+Elite" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-#quote-box {
-	width: 50%;
-	background-color: rgba(228, 228, 228, 0.83);
-	margin: 0 auto;
-	/*centering the quote horizontally and vertically using flexbox*/
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+	<!--instead of putting the jQuery cdn here, if put at bottom
+		of the body element, can assume that all DOM above it has
+		already been loaded, so don't need to use the 
+		ready statement in our app.js. Best practice is to load jQuery
+		at bottom of html page body element - it's faster.
+		-->
+	<!--
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		are here inserted at bottom of the body section
+		-->
 
-header {
-	text-align: center;
-}
+</head>
 
-h1, h3 {
-	font-family: 'Special Elite', cursive;
-}
+<body>
 
-header h1 {
-	font-weight: 100;
-	color: rgba(252, 139, 128, 0.75);
-	margin-bottom: 0;
-}
+	<header>
 
-header h3 {
-	color: #9E9E9E;
-	font-size: 1em;
-	font-family: 'Merriweather', 'Georgia', serif;
-	font-weight: 100;
-	margin: 0 0 50px 0;
-}
+		<h1>Mashape Andrux Famous Quotes API Ajax Callback</h1>
+		<h3>Using AJAX and jQuery Javascript Libraries</h3>
+		<!--
+			jQuery works with the Document Object Model (DOM), 
+			handling events, and working with AJAX to use a local script 
+			to get information on a server via api (here andrux famous quotes) 
+			with a query parameter () and replacing an html element 
+			(#quote & #author) with the returned text. 
+			See the script.js file. 
+		-->
 
-blockquote {
-	border: none;
-}
+	</header>
 
-blockquote p {
-	padding: 25px;
-	text-align: center;
-	font-size: 1.8em;
-	font-family: 'Special Elite', cursive;
-}
+	<div id="main">
+	
+		<div id="quote-box">
 
-blockquote cite {
-	display: block;
-	text-align: right;
-	font-size: 1.3em;
-	font-family: 'Merriweather', 'Georgia', serif;
-	margin-bottom: 20px;
-	color: #fc8b80;
-}
+			<blockquote>
+				<p id="text"></p>
+				<cite id="author"></cite>
 
-.buttons {
-	background: gainsboro;
-	width: 50%;
-	margin: 0 auto;
-	padding: 20px 0;
-	/*to make buttuns equally distributed*/
-	display: flex;
-	justify-content: space-around;
-}
 
-.btn:focus, .btn:active {
-	outline: none !important;
-}
+				<div class="buttons">
 
-.btn-default:hover {
-	background-color: rgba(252, 139, 128, 0.75);
-}
+					<a id="tweet-quote" href="#" target="_blank">
+						<button class="btn btn-default btn-circle btn-xl">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</button>
+					</a>
 
-.btn-circle.btn-xl {
-	width: 70px;
-	height: 70px;
-	padding: 10px 16px;
-	font-size: 24px;
-	line-height: 1.33;
-	border-radius: 35px;
-}
+					<a id="github" href="https://github.com/silvanet" target="_blank">
+						<i class="fa fa-github fa-5x" aria-hidden="true"></i>
+						</button>
+					</a>
 
-#github {
-	color: rgba(96, 125, 139, 0.51);
-}
+					<button class="btn btn-default btn-circle btn-xl" id="new-quote">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</button>
+			</blockquote>
+			</div>
+		</div>
 
-#github:hover {
-	color: rgba(252, 139, 128, 0.75);
-}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 
-@media (max-width:800px) {
-	#quote-box, .buttons {
-		width: 80%;
-	}
-}
+		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+
+</html>
