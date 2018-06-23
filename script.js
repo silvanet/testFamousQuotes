@@ -48,6 +48,7 @@ function displayArrayQuote(response) {
         console.log(response.author),
         $("#text").text(response.text),
         $("#author").text(response.author)
+        tweetQuote();
 
 //then when we click the new_quote button, we make the api call
 //here, click has a jQuery callback function -- the alert
