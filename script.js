@@ -114,9 +114,9 @@ function displayAPIQuote(response) {
 
 function tweetQuote() {
     var twitterURL = 'https://twitter.com/intent/tweet?hashtags=quotes&text="';
-    var quote = $("#quote").text();
+    var text = $("#text").text();
     var author = $('#author').text();
-    twitterURL += quote + '" - ' + author;
+    twitterURL += text + '" - ' + author;
 
     //attach the url, quote, & author href attribute
     //to the tweet button    
