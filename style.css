@@ -10,9 +10,8 @@ body {
 	background-color: transparent;
 }
 
-#container {
+#quote-box {
 	width: 50%;
-	/*height: 300px;*/
 	background-color: rgba(228, 228, 228, 0.83);
 	margin: 0 auto;
 	/*centering the quote horizontally and vertically using flexbox*/
@@ -22,7 +21,6 @@ body {
 }
 
 header {
-	/*background-color: gainsboro;*/
 	text-align: center;
 }
 
@@ -69,7 +67,7 @@ blockquote cite {
 	width: 50%;
 	margin: 0 auto;
 	padding: 20px 0;
-	/*make buttuns equally distributed*/
+	/*to make buttuns equally distributed*/
 	display: flex;
 	justify-content: space-around;
 }
@@ -100,7 +98,7 @@ blockquote cite {
 }
 
 @media (max-width:800px) {
-	#container, .buttons {
+	#quote-box, .buttons {
 		width: 80%;
 	}
 }

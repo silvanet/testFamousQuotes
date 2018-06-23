@@ -15,23 +15,23 @@ function displayQuoteFromArray() {
     var myQuotes = [
         {
             author: "Salvador Dali",
-            quote: "The only difference between me and a madman is that I'm not mad."
+            text: "The only difference between me and a madman is that I'm not mad."
         },
         {
             author: "Soren Aabye Kierkegaard",
-            quote: "People demand freedom of speech to make up for the freedom of thought which they avoid"
+            text: "People demand freedom of speech to make up for the freedom of thought which they avoid"
         },
         {
             author: "Oscar Wilde",
-            quote: "The only way to get rid of a temptation is to yield to it."
+            text: "The only way to get rid of a temptation is to yield to it."
         },
         {
             author: "Aldous Huxley",
-            quote: "Maybe this world is another planet's Hell."
+            text: "Maybe this world is another planet's Hell."
         },
         {
             author: "Thomas Alva Edison",
-            quote: "I have not failed. I've just found 10,000 ways that won't work."
+            text: "I have not failed. I've just found 10,000 ways that won't work."
         }
     ];
 
@@ -40,16 +40,18 @@ function displayQuoteFromArray() {
     var random = Math.floor(Math.random() * 5);
     displayArrayQuote(myQuotes[random]);
 }
-//note difference from api display function
+//note difference from api display function; I am trying
+//here to change #quote to #text and the response from quote to
+//text
 function displayArrayQuote(response) {
-    console.log(response.quote),
+    console.log(response.text),
         console.log(response.author),
-        $("#quote").text(response.quote),
+        $("#text").text(response.text),
         $("#author").text(response.author)
 
-//then when we click the next_quote button, we make the api call
+//then when we click the new_quote button, we make the api call
 //here, click has a jQuery callback function -- the alert
-$("#next_quote").click(function () {
+$("#new-quote").click(function () {
     $('#main').fadeOut();
     getRandomQuote();
 });
@@ -97,10 +99,13 @@ function getRandomQuote() {
     //the old Andrux famous quotes api was not delivered in array
     //the new on is, this code handles that change
 };
-
+/*When the #new-quote button is clicked, quote machine should
+fetch a new quote and display it in the #text element. I had it as
+#quote
+*/
 function displayAPIQuote(response) {
     console.log(response[0].quote); //to make sure we are getting the correct output: comment out later  
-    $("#quote").text(response[0].quote);
+    $("#text").text(response[0].quote);
     $('#author').text(response[0].author);
     //update the tweet href for the new quote
     tweetQuote();
@@ -115,5 +120,5 @@ function tweetQuote() {
 
     //attach the url, quote, & author href attribute
     //to the tweet button    
-    $('#tweet').attr('href', twitterURL);
+    $('#tweet-quote').attr('href', twitterURL);
 }
